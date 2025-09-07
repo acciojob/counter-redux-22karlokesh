@@ -11,7 +11,6 @@ import ReactDOM from "react-dom";
 import { createStore } from "redux";
 import { Provider, useDispatch, useSelector } from "react-redux";
 
-// ---------------- Redux ----------------
 const initialState = { count: 0 };
 
 const increment = () => ({ type: "INCREMENT" });
@@ -30,7 +29,6 @@ function counterReducer(state = initialState, action) {
 
 const store = createStore(counterReducer);
 
-// ---------------- Component ----------------
 const CounterApp = () => {
   const dispatch = useDispatch();
   const count = useSelector((state) => state.count);
@@ -44,7 +42,6 @@ const CounterApp = () => {
   );
 };
 
-// ---------------- Render ----------------
 ReactDOM.render(
   <Provider store={store}>
     <CounterApp />
