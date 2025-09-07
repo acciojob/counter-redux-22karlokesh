@@ -15,7 +15,6 @@
 // my code
 import React from "react";
 import { useSelector, useDispatch } from "react-redux";
-import { increment, decrement } from "../redux/actions";
 import "./../styles/App.css";
 
 const App = () => {
@@ -25,9 +24,9 @@ const App = () => {
   return (
     <div>
       {/* Do not remove the main div */}
-      <h1>{count}</h1>
-      <button onClick={() => dispatch(increment())}>increment</button>
-      <button onClick={() => dispatch(decrement())}>decrement</button>
+      <h1>Counter: {count}</h1>
+      <button onClick={() => dispatch({ type: "INCREMENT" })}>+</button>
+      <button onClick={() => dispatch({ type: "DECREMENT" })}>-</button>
     </div>
   );
 };
